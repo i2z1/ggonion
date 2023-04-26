@@ -20,10 +20,10 @@ ggonion <- function(x, ratio = 2, bias = 0, color = NA){
   # Behold some circles
 ggplot(cdata, aes(x = x, y = y)) +
     geom_polygon(aes(group = label, fill = clrs)) +
-    geom_path() +
-    ggplot2::theme_void() #+
+    geom_path(aes(group = label)) +
+    ggplot2::theme_void() +
+    ggplot2::geom_text(aes(x = x_label, y = y_label, label = label), data = cdata) #+
     #ggplot2::theme(legend.position="none") #+
-    #ggplot2::geom_text(aes(x = x_label, y = y_label, label = label), data = cdata) +
     #scale_fill_manual(values = clrs)
 
 #  return(res)
