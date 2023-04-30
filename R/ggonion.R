@@ -15,7 +15,7 @@ ggonion <- function(x, ratio = 2, bias = 0, color = NA){
 
   df <- prepare_circles_df(x, ratio, bias)
   cdata <- make_circle_polygons(df, color)
-  print(cdata)
+
   # Behold some circles
 ggplot(cdata, aes(x = x, y = y, group=desc(r))) +
     geom_polygon(fill=cdata$clrs) +
@@ -73,7 +73,6 @@ prepare_circles_df <- function(x, ratio, bias){
 make_circle_polygons <- function(prep_circles_df, color){
 
   clrs <- make_color(prep_circles_df, color)
-  print(clrs)
 
   prep_circles_df$clrs <- clrs
 
