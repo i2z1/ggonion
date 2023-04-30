@@ -14,15 +14,15 @@
 ggonion <- function(x, ratio = 2, bias = 0, color = NA){
 
   df <- prepare_circles_df(x, ratio, bias)
-
   cdata <- make_circle_polygons(df, color)
 
   # Behold some circles
-ggplot(cdata, aes(x = x, y = y)) +
-    geom_polygon(aes(group = label, fill = clrs)) +
+ggplot(cdata, aes(x = x, y = y, group=desc(r))) +
+    geom_polygon(fill=cdata$clrs) +
     geom_path(aes(group = label)) +
     ggplot2::theme_void() +
-    ggplot2::geom_text(aes(x = x_label, y = y_label, label = label), data = cdata) #+
+    ggplot2::geom_text(aes(x = x_label, y = y_label, label = label))+
+    scale_size(range = c(1, -1))
     #ggplot2::theme(legend.position="none") #+
     #scale_fill_manual(values = clrs)
 
@@ -65,6 +65,7 @@ prepare_circles_df <- function(x, ratio, bias){
 
   df <- iterative_get_y0(df, bias)
   df <- iterative_get_y_label(df)
+  
 
   return(df)
 }
