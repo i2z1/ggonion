@@ -1,4 +1,3 @@
-
 #' Draw onion diagram
 #'
 #' @param x vector of labels for onion diagramm
@@ -17,16 +16,16 @@ ggonion <- function(x, ratio = 2, bias = 0, color = NA){
   cdata <- make_circle_polygons(df, color)
 
   # Behold some circles
-ggplot(cdata, aes(x = x, y = y, group=desc(r))) +
+  ggplot(cdata, aes(x = x, y = y, group=desc(r))) +
     geom_polygon(fill=cdata$clrs) +
     geom_path(aes(group = label)) +
     ggplot2::theme_void() +
     ggplot2::geom_text(aes(x = x_label, y = y_label, label = label))+
     scale_size(range = c(1, -1))
-    #ggplot2::theme(legend.position="none") #+
-    #scale_fill_manual(values = clrs)
+  #ggplot2::theme(legend.position="none") #+
+  #scale_fill_manual(values = clrs)
 
-#  return(res)
+  #  return(res)
 }
 
 #' Prepare dataframe with circles parameters
@@ -34,10 +33,7 @@ ggplot(cdata, aes(x = x, y = y, group=desc(r))) +
 #' @param x vector of classes for onion diagramm
 #' @param bias vertical bias of nested circles
 #' @param ratio modificator of nested circle size
-#' @param x0
-#' @param y0
-#' @param r
-#' @param df
+#'
 #' @return df[label,x0,y0,r,x_label,y_label]
 #' @import dplyr
 #'
@@ -96,8 +92,7 @@ make_circle_polygons <- function(prep_circles_df, color){
 #'
 #' @param df
 #' @param bias bias [0:1]
-#' @param y0
-#' @param r
+#'
 #' @return
 #'
 #' @examples
@@ -119,8 +114,7 @@ iterative_get_y0 <- function(df, bias){
 #' Calculate labels y coord as middle between upper half of circles
 #'
 #' @param df
-#' @param y0
-#' @param r
+#'
 #' @return df with y_label coord
 #' @import dplyr
 #'
@@ -140,10 +134,8 @@ iterative_get_y_label <- function(df){
 #'
 #' @param center
 #' @param diameter
-#' @param npoints npoints
-#' @param y0
-#' @param x0
-#' @param r
+#' @param npoints
+#'
 #' @return
 #'
 #' @examples
@@ -181,5 +173,3 @@ make_color <- function(prep_circles_df, color){
   clrs <- rev(clrs) # due to vector of circles is reversed cause the biggest circle is at the lowest visual layer
   return(clrs)
 }
-
-
