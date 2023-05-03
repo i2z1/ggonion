@@ -11,6 +11,8 @@ circleFun(x0, y0, r = 1, npoints = 100)
 
 \item{y0}{y0}
 
+\item{r}{r}
+
 \item{npoints}{npoints}
 }
 \description{
