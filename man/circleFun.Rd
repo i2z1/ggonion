@@ -6,9 +6,6 @@
 \usage{
 circleFun(x0, y0, r = 1, npoints = 100)
 }
-\arguments{
-\item{npoints}{}
-}
 \description{
 Draw circle https://stackoverflow.com/questions/6862742/draw-a-circle-with-ggplot2
 }
