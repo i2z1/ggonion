@@ -89,7 +89,7 @@ make_circle_polygons <- function(prep_circles_df, color){
 
 #' Hlpr to iterative calculate y coord bias for circles center using previous circle precalculated value
 #'
-#' @param df
+#' @param df df
 #' @param bias bias [0:1]
 #'
 #' @return
@@ -112,7 +112,7 @@ iterative_get_y0 <- function(df, bias){
 
 #' Calculate labels y coord as middle between upper half of circles
 #'
-#' @param df
+#' @param df df
 #'
 #' @return df with y_label coord
 #' @import dplyr
@@ -133,9 +133,9 @@ iterative_get_y_label <- function(df){
 #'
 #' @param center
 #' @param diameter
-#' @param npoints
-#' @param x0
-#' @param y0
+#' @param npoints npoints
+#' @param x0 x0
+#' @param y0 y0
 #' @return
 #'
 #' @examples

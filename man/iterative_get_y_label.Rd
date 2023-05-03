@@ -7,7 +7,7 @@
 iterative_get_y_label(df)
 }
 \arguments{
-\item{df}{}
+\item{df}{df}
 }
 \value{
 df with y_label coord

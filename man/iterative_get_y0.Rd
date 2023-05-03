@@ -7,6 +7,8 @@
 iterative_get_y0(df, bias)
 }
 \arguments{
+\item{df}{df}
+
 \item{bias}{bias [0:1]}
 }
 \description{
