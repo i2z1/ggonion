@@ -12,8 +12,7 @@ RoxygenNote: 7.2.3
 Imports: 
     dplyr,
     ggplot2,
-    cli,
-    testthat,
+    cli
     purrr
 Suggests: 
     testthat (>= 3.0.0)
