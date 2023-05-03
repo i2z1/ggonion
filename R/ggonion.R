@@ -140,7 +140,7 @@ iterative_get_y_label <- function(df){
 #'
 #' @param center
 #' @param diameter
-#' @param npoints
+#' @param npoints npoints
 #' @param y0
 #' @param x0
 #' @param r
