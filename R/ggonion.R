@@ -33,8 +33,7 @@ ggonion <- function(x, ratio = 2, bias = 0, color = NA){
 #' @param x vector of classes for onion diagramm
 #' @param bias vertical bias of nested circles
 #' @param ratio modificator of nested circle size
-#'
-#' @return df[label,x0,y0,r,x_label,y_label]
+#' df[label,x0,y0,r,x_label,y_label]
 #' @import dplyr
 #'
 #' @examples
