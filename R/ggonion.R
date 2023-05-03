@@ -34,7 +34,10 @@ ggplot(cdata, aes(x = x, y = y, group=desc(r))) +
 #' @param x vector of classes for onion diagramm
 #' @param bias vertical bias of nested circles
 #' @param ratio modificator of nested circle size
-#'
+#' @param x0
+#' @param y0
+#' @param r
+#' @param df
 #' @return df[label,x0,y0,r,x_label,y_label]
 #' @import dplyr
 #'
@@ -65,7 +68,7 @@ prepare_circles_df <- function(x, ratio, bias){
 
   df <- iterative_get_y0(df, bias)
   df <- iterative_get_y_label(df)
-  
+
 
   return(df)
 }
