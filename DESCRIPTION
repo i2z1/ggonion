@@ -5,6 +5,7 @@ Version: 0.1.0
 Author: i2z1@yandex.ru
 Maintainer: Ivan <i2z1@yandex.ru>
 Description: Generate onion diagrams (core structure circles) with ggplot2.
+Depends: R (>= 3.1.0)
 License: GPLv3
 Encoding: UTF-8
 LazyData: true
