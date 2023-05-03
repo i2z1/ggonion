@@ -136,6 +136,7 @@ iterative_get_y_label <- function(df){
 #' @param npoints npoints
 #' @param x0 x0
 #' @param y0 y0
+#' @param r r
 #' @return
 #'
 #' @examples
