@@ -27,6 +27,7 @@ jobs:
       - name: RCMD Check
         uses: r-lib/actions/check-r-package@v2
   release:
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
       - uses: technote-space/release-github-actions@v6
