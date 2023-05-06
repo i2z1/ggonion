@@ -18,12 +18,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: R Build and Checks
-        uses: Swechhya/R-actions@v1.2
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
+      - name: Install dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          action: 'all'
-          needsBioc: false
-          buildSubDirectory: './'
+          extra-packages: any::rcmdcheck
+      - name: RCMD Check
+        uses: r-lib/actions/check-r-package@v2
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: technote-space/release-github-actions@v6
 
       
     
