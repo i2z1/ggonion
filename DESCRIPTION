@@ -11,8 +11,7 @@ LazyData: true
 RoxygenNote: 7.2.3
 Imports: 
     dplyr,
-    ggplot2,
-    cli
+    ggplot2
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
