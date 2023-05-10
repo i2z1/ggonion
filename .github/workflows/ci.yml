@@ -14,7 +14,7 @@ on:
 
 
 jobs:
-  build:
+  build_and_release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -26,11 +26,8 @@ jobs:
           extra-packages: any::rcmdcheck
       - name: RCMD Check
         uses: r-lib/actions/check-r-package@v2
-  release:
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: technote-space/release-github-actions@v6
+      - name: Release
+        uses: technote-space/release-github-actions@v6
 
       
     
