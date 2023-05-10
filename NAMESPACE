@@ -3,4 +3,5 @@
 export(ggonion)
 import(cli)
 import(dplyr)
+import(purrr)
 import(ggplot2)
