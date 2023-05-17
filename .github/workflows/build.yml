@@ -1,0 +1,32 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v1
+        with:
+          r-version: '4.1'
+
+      - name: Install Dependencies
+        run: |
+          Rscript -e 'install.packages(c("devtools"))'
+          Rscript -e 'devtools::install_deps(dependencies = TRUE)'
+
+      - name: Build Package Documentation
+        run: bash pkgdown.sh
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.DEPLOY_KEY }}
+          publish_dir: ./docs
