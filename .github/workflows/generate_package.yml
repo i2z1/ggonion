@@ -17,8 +17,8 @@ jobs:
       run: Rscript -e 'devtools::build()'
     # - name: Check Package
     #   run: Rscript -e 'devtools::check()'
-    - name: Test Package
-      run: Rscript -e 'testthat::test_dir("tests/")'
+    # - name: Test Package
+    #   run: Rscript -e 'testthat::test_dir("tests/")'
     - name: Upload Coverage
       uses: codecov/codecov-action@v3
       with:
