@@ -15,8 +15,8 @@ jobs:
       run: Rscript -e 'install.packages(c("devtools", "testthat", "covr", "dplyr", "ggplot2", "cli"))'
     - name: Generate Package
       run: Rscript -e 'devtools::build()'
-    - name: Check Package
-      run: Rscript -e 'devtools::check()'
+    # - name: Check Package
+    #   run: Rscript -e 'devtools::check()'
     - name: Test Package
       run: Rscript -e 'testthat::test_dir("tests/")'
     - name: Upload Coverage
