@@ -12,7 +12,7 @@ jobs:
       with:
         use-public-rspm: true
     - name: Install Dependencies
-      run: Rscript -e 'install.packages(c("devtools", "testthat", "covr"))'
+      run: Rscript -e 'install.packages(c("devtools", "testthat", "covr", "dplyr", "ggplot2"))'
     - name: Generate Package
       run: Rscript -e 'devtools::build()'
     - name: Check Package
