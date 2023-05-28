@@ -1,0 +1,8 @@
+url: https://solt01.github.io/ggonion/
+template:
+  bootstrap: 5
+
+
+development:
+  mode: auto
+
