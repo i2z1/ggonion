@@ -1,0 +1,37 @@
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+name: Package Generation
+
+jobs:
+  SetupAndRelease:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      R_KEEP_PKG_SOURCE: yes
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-r-dependencies@v2
+
+      - name: Get version from Description
+        env:
+          description: ./DESCRIPTION
+        run: |
+          echo "VERSION=$(grep 'Version' ${{ env.description }} | tr -d 'Version: ')" >> "$GITHUB_ENV";
+
+      - name: create release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ env.VERSION }}
+          release_name: ggonion v${{ env.VERSION }}
