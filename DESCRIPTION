@@ -1,7 +1,7 @@
 Package: ggonion
 Type: Package
 Title: Draw onion diagrams with ggplot2
-Version: 0.1.0
+Version: 0.1.1
 Author: i2z1@yandex.ru
 Maintainer: Ivan <i2z1@yandex.ru>
 Description: Generate onion diagrams (core structure circles) with ggplot2.
