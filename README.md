@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ggonion
+# ggonion <img src="man/figures/hex.png" width="140px" height="140px" align="right" style="padding-left:10px;" />
 
 R package for drawing onion diagrams with ggplot2
 
@@ -18,9 +18,9 @@ You can install development version if ggonion from Github with
 ``` r
 library(ggonion)
 
-x <- c("one", "two", "three")
-clr <- c("red","yellow", "green")
+x <- c("1", "2", "3","4")
+clr <- c("orange", "#ecefa2", "#a2cda3", "#8a99e9")
 ggonion(x, color = clr)
 ```
 
-<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+![](man/figures/README-example-1.png)<!-- -->

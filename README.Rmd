@@ -8,12 +8,35 @@ output: github_document
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
+  fig.path = "man/figures/README-"
 )
 ```
 
-# ggonion
+```{r generate_hex, include=FALSE, fig.path="man/figures/hex-"}
+library(hexSticker)
+library(ggonion)
+
+x <- c("1", "2", "3","4")
+clr <- c("orange","#ecefa2", "#a2cda3","#8a99e9")
+p <- ggonion(x, color = clr)
+p
+
+hexSticker::sticker(p, package="ggonion", 
+                    p_size=22,
+                    p_y=1.5,
+                    s_x=1,
+                    s_y=.75,
+                    s_width=1.3,
+                    s_height=1,
+                    h_fill = "#000000",
+                    p_color = "#d1e942",
+                    h_color = "#e06b17", #border
+                    p_family = "teko",
+                    filename="man/figures/hex.png")
+```
+
+
+# ggonion <img src="man/figures/hex.png" width="140px" height="140px" align="right" style="padding-left:10px;" />
 
 R package for drawing onion diagrams with ggplot2
 
@@ -30,11 +53,11 @@ devtools::install_github("i2z1/ggonion")
 ## Usage
 
 
-```{r}
+```{r example, fig.asp = 1, fig.width = 4, fig.height = 4}
 library(ggonion)
 
-x <- c("one", "two", "three")
-clr <- c("red","yellow", "green")
+x <- c("1", "2", "3","4")
+clr <- c("orange", "#ecefa2", "#a2cda3", "#8a99e9")
 ggonion(x, color = clr)
 ```
 
