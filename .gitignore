@@ -26,4 +26,4 @@ vignettes/*.pdf
 *.knit.md
 # R Environment Variables
 .Renviron
-
+hex-generate_hex-1.png
