@@ -164,8 +164,8 @@ make_color <- function(prep_circles_df, color){
     clrs <- rainbow(nclrs)
   } else {
     if(length(color)!=nrow(prep_circles_df)){
-      cli::cli_alert_warning(paste0("You provided color vector of length ",length(color)," while yor data is length of ", nrow(prep_circles_df)))
-      cli::cli_alert_info("Using default palette")
+      cat(paste0("You provided color vector of length ",length(color)," while yor data is length of ", nrow(prep_circles_df)))
+      cat("Using default palette")
       nclrs <- nrow(prep_circles_df)
       clrs <- rainbow(nclrs)
     } else {
