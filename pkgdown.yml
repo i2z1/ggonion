@@ -1,6 +1,8 @@
-pandoc: 2.19.2
-pkgdown: 2.0.7
+pandoc: 3.1.11
+pkgdown: 2.1.1
 pkgdown_sha: ~
 articles: {}
-last_built: 2023-06-16T20:54Z
-
+last_built: 2024-09-20T16:02Z
+urls:
+  reference: https://i2z1.github.io/ggonion/reference
+  article: https://i2z1.github.io/ggonion/articles
