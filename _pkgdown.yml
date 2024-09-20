@@ -1,0 +1,5 @@
+url: https://i2z1.github.io/ggonion/
+
+template:
+  bootstrap: 5
+  light-switch: true
